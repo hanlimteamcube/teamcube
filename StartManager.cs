@@ -8,7 +8,6 @@ public class StartManager : MonoBehaviour
 {
     public void StartClick()
     {
-       
        SceneManager.LoadScene(1);
     }
 }

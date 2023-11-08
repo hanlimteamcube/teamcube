@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
 
     public Image[] healthPoints;
 
-    float health, maxHealth = 100;
+    public float health, maxHealth = 100;
     float lerpSpeed;
 
     public GameObject hitEffect;       //피격효과 오브젝트
@@ -30,6 +30,11 @@ void Start(){
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.gm.gState != GameManager.GameState.Run)
+        {
+            return;
+        }
+
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 

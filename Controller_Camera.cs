@@ -10,6 +10,10 @@ public class Controller_Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            transform.position = target.position;
+        if (GameManager.gm.gState != GameManager.GameState.Run)
+        {
+            return;
+        }
+        transform.position = target.position;
     }
 }
